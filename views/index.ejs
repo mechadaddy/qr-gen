@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+<div class="wrapper">
+<main>
+<form action="/generate" method="POST">
+  <label for="url">Enter URL:</label>
+  <input type="text" id="url" name="url" required>
+  <br>
+  <button type="submit">Generate QR Code</button>
+</form>
+
+<% if (qrCodeUrl) { %>
+  <h3>Your QR Code:</h3>
+  <img src="<%= qrCodeUrl %>" alt="Generated QR Code">
+<% } %>
+
+</main>
+<%- include("partials/footer.ejs") %>
